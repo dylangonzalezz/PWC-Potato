@@ -1,0 +1,37 @@
+.c-columns{
+  width: 72%;
+  height: 70vh;
+  margin: 0 auto;
+}
+
+.c-columns__column{
+  float: left;
+  width: 33%;
+  text-align: center;
+  height:70vh;
+}
+
+.c-columns__line{
+  background-color: #e8e8e8;
+  width:2px;
+  height: 70vh;
+  float: left;
+}
+
+.c-columns__listitem{
+  float: left;
+}
+
+.c-columns__button{
+  width:50%;
+  display:block;
+  margin:0 auto;
+  margin-top:120%
+}
+
+.c-columns__button:active{
+  width:50%;
+  display:block;
+  margin:0 auto;
+  margin-top:120%
+}
