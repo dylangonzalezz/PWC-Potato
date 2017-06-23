@@ -1,11 +1,29 @@
 .c-list {
     display: flex;
-    align-items: center;
     float: right;
-}
+    vertical-align: middle;
+    position: relative;
+    padding-top: 2%;
 
-.c-list__item {
-    margin-left: 4%;
-    list-style: none;
-    white-space: nowrap;
+    &__item {
+        margin-left: 4%;
+        list-style: none;
+        white-space: nowrap;
+        vertical-align: middle;
+        padding-left: 5%;
     }
+
+    &__link {
+      text-decoration: none;
+      text-align: center;
+      color: white;
+      display:block;
+      
+      &:active {
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        display:block
+      }
+    }
+}

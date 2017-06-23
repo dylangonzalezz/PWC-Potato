@@ -5,12 +5,13 @@
   vertical-align: middle;
 }
 
-.c-contentbox__title--white{
+.c-contentbox__title{
   text-align: center;
-  color: white;
-}
-
-.c-contentbox__title--brown{
-  text-align: center;
-  color: #633b0a;
+  color:white;
+  &--white{
+    color:white;
+  }
+  &--brown{
+    color:#633b0a;
+  }
 }

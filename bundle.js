@@ -63,17 +63,68 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports) {
+
+var button1 = document.querySelector(".js-button-left");
+var button2 = document.querySelector(".js-button-right");
+var slideIndex = 1;
+showDivs(slideIndex);
+
+
+button2.addEventListener("click", function(){plusDivs(+1)})
+button1.addEventListener("click", function(){plusDivs(-1)})
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+
+  showDivsleft(slideIndex += n);
+  showDivsright(slideIndex += n);
+
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("js-slider__slide--middle");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  } x[slideIndex-1].style.display = "block";
+}
+function showDivsleft(n) {
+  var i;
+  var x = document.getElementsByClassName("c-slider__slide--left");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  } x[slideIndex-1].style.display = "block";
+}
+
+function showDivsright(n) {
+  var i;
+  var x = document.getElementsByClassName("c-slider__slide--right");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  } x[slideIndex-1].style.display = "block";
+}
+
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(2);
+var content = __webpack_require__(3);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -81,7 +132,7 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(4)(content, options);
+var update = __webpack_require__(5)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -98,32 +149,35 @@ if(false) {
 }
 
 /***/ }),
-/* 1 */
+/* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__scss_main_scss__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__scss_main_scss__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__scss_main_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__scss_main_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__js_slide_js__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__js_slide_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__js_slide_js__);
+
 
 
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(undefined);
+exports = module.exports = __webpack_require__(4)(undefined);
 // imports
-
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
 
 // module
-exports.push([module.i, "h1 {\n  color: red; }\n", ""]);
+exports.push([module.i, "body {\n  font-family: \"Open Sans\", sans-serif;\n  margin: 0; }\n\nhtml {\n  margin: 0; }\n\n.c-page {\n  display: block;\n  background-repeat: no-repeat;\n  height: 100vh;\n  background-size: cover;\n  background-position: center; }\n  .c-page--main {\n    background-image: url(\"/images/section-1.jpg\"); }\n  .c-page--shapes {\n    background-image: url(\"/images/section-2.jpg\"); }\n  .c-page--health {\n    background-image: url(\"/images/section-3.jpg\"); }\n  .c-page--transform {\n    background-image: url(\"/images/section-4.jpg\"); }\n  .c-page--slider {\n    background-image: url(\"/images/section-5.jpg\"); }\n  .c-page--columns {\n    background-color: #f7f7f7; }\n\n.c-logo {\n  margin-top: 3%; }\n\n.c-list {\n  display: flex;\n  float: right;\n  vertical-align: middle;\n  position: relative;\n  padding-top: 2%; }\n  .c-list__item {\n    margin-left: 4%;\n    list-style: none;\n    white-space: nowrap;\n    vertical-align: middle;\n    padding-left: 5%; }\n  .c-list__link {\n    text-decoration: none;\n    text-align: center;\n    color: white;\n    display: block; }\n    .c-list__link:active {\n      text-decoration: none;\n      text-align: center;\n      color: white;\n      display: block; }\n\n.c-container {\n  max-width: 1000px;\n  margin: 0 auto; }\n\n.c-slider {\n  width: 100%;\n  height: 50%; }\n\n.c-slider__content {\n  position: relative; }\n  .c-slider__content--left {\n    opacity: 0.5;\n    margin-left: 5%;\n    width: 33%; }\n  .c-slider__content--middle {\n    margin-left: 40%;\n    margin-top: 10%;\n    width: 33%; }\n  .c-slider__content--right {\n    opacity: 0.5;\n    margin-left: 45%; }\n\n.c-slider__slide {\n  position: absolute; }\n  .c-slider__slide--right {\n    margin-left: 55%; }\n\n.c-slider__name {\n  text-align: center;\n  color: #633b0a;\n  font-size: 80%; }\n\n.c-slider__button--right {\n  float: right; }\n\n.c-slider__button--left {\n  margin-top: 10%;\n  float: right; }\n\n.c-paragraph--white {\n  text-align: center;\n  color: white; }\n\n.c-paragraph--brown {\n  text-align: center;\n  color: #633b0a; }\n\n.c-contentbox {\n  max-width: 1000px;\n  margin: 0 auto;\n  padding-top: 10vh;\n  vertical-align: middle; }\n\n.c-contentbox__title {\n  text-align: center;\n  color: white; }\n  .c-contentbox__title--white {\n    color: white; }\n  .c-contentbox__title--brown {\n    color: #633b0a; }\n\n.c-image--potato {\n  width: 100%;\n  display: block; }\n\n.c-button {\n  color: white;\n  border-radius: 15px;\n  background-color: inherit;\n  border-style: solid;\n  padding: 5px 10px;\n  text-align: center;\n  text-decoration: none;\n  display: inline-block;\n  font-size: 16px;\n  margin-top: -3%; }\n  .c-button:active {\n    color: white;\n    border-radius: 15px;\n    background-color: inherit;\n    border-style: solid;\n    padding: 5px 10px;\n    text-align: center;\n    text-decoration: none;\n    display: inline-block;\n    font-size: 16px;\n    margin-top: -3%; }\n  .c-button--white {\n    border-color: white;\n    color: white; }\n  .c-button--green {\n    border-color: #00e030;\n    color: #00e030; }\n\n.c-columns {\n  width: 72%;\n  height: 70vh;\n  margin: 0 auto; }\n  .c-columns__column {\n    float: left;\n    width: 33%;\n    text-align: center;\n    height: 70vh; }\n  .c-columns__line {\n    background-color: #e8e8e8;\n    width: 2px;\n    height: 70vh;\n    float: left; }\n  .c-columns__listitem {\n    float: left; }\n\n.c-columns__button {\n  width: 50%;\n  display: block;\n  margin: 0 auto;\n  margin-top: 120%; }\n  .c-columns__button:active {\n    width: 50%;\n    display: block;\n    margin: 0 auto;\n    margin-top: 120%; }\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports) {
 
 /*
@@ -205,7 +259,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -251,7 +305,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(5);
+var	fixUrls = __webpack_require__(6);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -376,10 +430,10 @@ function insertStyleElement (options, style) {
 }
 
 function removeStyleElement (style) {
+	if (style.parentNode === null) return false;
 	style.parentNode.removeChild(style);
 
 	var idx = stylesInsertedAtTop.indexOf(style);
-
 	if(idx >= 0) {
 		stylesInsertedAtTop.splice(idx, 1);
 	}
@@ -564,7 +618,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports) {
 
 

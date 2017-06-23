@@ -1,0 +1,37 @@
+.c-button{
+  color: white;
+  border-radius: 15px;
+  background-color: inherit;
+  border-style: solid;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: -3%;
+
+    &:active{
+      color: white;
+      border-radius: 15px;
+      background-color: inherit;
+      border-style: solid;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: -3%;
+
+    }
+
+    &--white{
+        border-color:white;
+        color: white;
+    }
+
+    &--green{
+        border-color:#00e030;
+        color: #00e030;
+
+    }
+}
