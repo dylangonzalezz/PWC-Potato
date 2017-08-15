@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Potato</title>
+    <link rel="stylesheet" type="text/css" href="sliden/sliden.css"/>
 </head>
 <body>
 <div class="c-page c-page--main">
@@ -45,38 +46,31 @@
 <div class="c-page c-page--slider">
 
     <div class="c-contentbox">
-    <h2 class="c-contentbox__title c-contentbox__title--brown">100% Customer satisfaction!</h2>
+      <h2 class="c-contentbox__title c-contentbox__title--brown">100% Customer satisfaction!</h2>
     </div>
 
-    <!-- //<div class="c-slider">
-        <div class="c-slider__content c-slider__content--left">
-                  <p class="c-paragraph--brown">Its Very Nice</p>
-                  <p class="c-slider__name"><strong>Arnold</strong> Schwarzenegger</p>
-        </div>
-        <div class="c-slider__content c-slider__content--middle">
-                    <p class="c-paragraph--brown"> Wombo Combo OMG</p>
-                    <p class="c-slider__name"><strong>Dylan G</strong> Boi</p>
-        </div>
-        <div class="c-slider__content c-slider__content--right">
-                    <p class="c-paragraph--brown">Its Potatotally Awesome</p>
-                    <p class="c-slider__name"><strong>Birdman</strong> Man/ Bird</p>
-        </div>
-        <div class="c-slider__button--right"></div>
-        <div class="c-slider__button--left"></div>
-    </div> -->
-
-    <div class="sliderbaby">
-      <div>LOLOL</div>
-      <div>OmFG</div>
-      <div>ROFL</div>
-      <div>LOLOL</div>
+  <div class="c-slider">
+    <div class="slidenjs">
+      <div>
+        <p class="c-paragraph--brown">Its Very Nice</p>
+        <p class="c-slider__name"><strong>Arnold</strong> Schwarzenegger</p>
+      </div>
+      <div>
+        <p class="c-paragraph--brown"> Wombo Combo OMG</p>
+        <p class="c-slider__name"><strong>Dylan G</strong> Boi</p>
+      </div>
+      <div>
+        <p class="c-paragraph--brown">Its Potatotally Awesome</p>
+        <p class="c-slider__name"><strong>Birdman</strong> Man/ Bird</p>
+      </div>
     </div>
+  </div>
 
 </div>
 
 <div class="c-page c-page--columns">
     <div class="c-contentbox">
-        <h2 class="c-contentbox__title c-contentbox__title--">Order one (or more) today!</h2>
+        <h2 class="c-contentbox__title c-contentbox__title--brown">Order one (or more) today!</h2>
     <div class="c-columns">
         <div class="c-columns__column">
             <h4 class="c-columns__header"><strong>Potato &trade;</strong> Lite</h4>
@@ -120,9 +114,15 @@
     </div>
 </div>
 
-<script src="js/jquery-3.2.1.js"></script>
 <script src="bundle.js"></script>
-<script src="js/bestslider.js"></script>
+<script src="js/jquery-3.2.1.js"></script>
+<script src="sliden/sliden.js"></script>
+
+<script>
+  var slider = slidenjs();
+  slider.initialize("slidenjs");
+</script>
+
 </body>
 <footer class=c-footer>
 </footer>
